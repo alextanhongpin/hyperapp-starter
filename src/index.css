@@ -1,3 +1,5 @@
+@import './styles/theme.css';
+
 html {
   box-sizing: border-box;
 }
@@ -14,4 +16,42 @@ img {
 
 body {
   font-family: "Avenir", Arial, Helvetica, sans-serif;
+}
+
+.main {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "navbar"
+  "body"
+  "footer";
+  grid-template-rows: 
+    var(--header-height)
+    var(--navbar-height)
+    1fr
+    var(--footer-height);
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.body {
+  grid-area: body;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.header,
+.navbar,
+.body,
+.footer {
+  padding: 0 16px;
 }

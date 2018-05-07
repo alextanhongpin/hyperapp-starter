@@ -1,11 +1,13 @@
 import { app, h } from 'hyperapp'
-import { Link, Route, location } from '@hyperapp/router'
+import { Route, location } from '@hyperapp/router'
 
 import 'normalize.css'
 import './index.css'
 
 // Atoms
 import Header from './atomic/atoms/Header'
+import Navbar from './atomic/atoms/Navbar'
+import Footer from './atomic/atoms/Footer'
 
 // Pages
 import HomePage from './atomic/pages/Home'
@@ -23,13 +25,14 @@ const actions = {
 }
 
 const view = (state, actions) => (
-  <main>
+  <main class="main">
     <Header header={state.header}/>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
+    <Navbar/>
 
     <Route path="/" render={HomePage}/>
     <Route path="/about" render={AboutPage}/>
+
+    <Footer/>
   </main>
 )
 

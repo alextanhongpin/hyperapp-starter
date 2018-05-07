@@ -1,0 +1,10 @@
+@import '../../../styles/theme.css';
+
+.footer {
+	height: var(--footer-height);
+	line-height: var(--footer-height);
+	font-size: 0.75rem;
+	font-weight: 500;
+	text-align: center;
+	color: var(--gray);
+}

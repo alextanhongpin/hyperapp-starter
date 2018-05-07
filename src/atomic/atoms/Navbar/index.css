@@ -1,0 +1,13 @@
+@import '../../../styles/theme.css';
+
+.navbar {
+	background: var(--gallery);
+	display: block;
+	height: var(--navbar-height);
+	line-height: var(--navbar-height);
+}
+
+.navbar-link {
+	text-decoration: none;
+	color: inherit;
+}

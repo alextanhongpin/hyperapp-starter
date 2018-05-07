@@ -1,3 +1,13 @@
 :root {
+/* Colors */
   --coral-red: #FF4444;
+  --gallery: #EEEEEE;
+  --gray: #888888;
+  
+/* Dimensions */
+  --header-height: 60px;
+  --navbar-height: 40px;
+  --footer-height: 40px;
+
+	--brand-height: 35px;
 }

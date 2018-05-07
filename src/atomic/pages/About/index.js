@@ -1,7 +1,8 @@
 import { h } from 'hyperapp'
+import "./index.css"
 
 const page = () => (
-	<div>
+	<div class="body">
 		About Page
 	</div>
 )

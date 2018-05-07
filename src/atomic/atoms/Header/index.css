@@ -1,24 +1,43 @@
 @import '../../../styles/theme.css';
 
-:root {
-	--header-height: 60px;
-	--brand-height: 35px;
-}
-
-header {
+.header {
 	height: var(--header-height);
-	line-height: var(--header-height);
-	padding: 0 16px;
-	/* box-shadow: inset 0 -5px 10px rgba(0, 0, 0, .05); */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-content: center;
 }
 
 .header-brand {
 	text-decoration: none;
 	color: var(--coral-red);
+	border: 2px solid var(--coral-red);
+	box-sizing: content-box;
 	display: inline-block;
 	height: var(--brand-height);
 	line-height: var(--brand-height);
 	padding: 0 16px;
 	font-weight: bold;
 	border-radius: 3px;
+	justify-self: flex-start;
+}
+
+.header-photo-holder {
+	justify-self: flex-end;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-column-gap: 8px;
+	align-items: center;
+}
+
+.header-username {
+	font-size: .85rem;
+	font-weight: 500;
+}
+
+.header-photo {
+	background: var(--gallery);
+	border: 1px solid var(--gallery);
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
 }
