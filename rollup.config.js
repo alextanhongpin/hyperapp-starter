@@ -28,8 +28,11 @@ export default {
     `,
   },
   plugins: [
-    postcss({ 
-      plugins: [nested()] 
+    postcss({
+      extract: true,
+      modules: true,
+      minimize: true,
+      plugins: [nested()]
     }),
     // This is required to compile JSX
     babel({
