@@ -1,11 +1,11 @@
 :root {
-  --red: #FF4444;
+  --white: white;
 }
+
 html {
   font-size: calc(8px + 2vmin);
   font-family: sans-serif;
-  background: white;
-  color: var(--red);
+  background: var(--white);
 }
 
 body,
@@ -27,12 +27,12 @@ noscript {
   justify-content: center;
 }
 
-/* div {
+div {
   display: flex;
   > * + * {
     margin-left: 0.38rem;
   }
-} */
+}
 
 noscript {
   width: 100vw;

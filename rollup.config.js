@@ -6,6 +6,7 @@ import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
 import nested from 'postcss-nested'
+import cssnext from 'postcss-cssnext'
 
 // Added to compile JSX
 import babel from 'rollup-plugin-babel'
@@ -32,7 +33,16 @@ export default {
       extract: true,
       modules: true,
       minimize: true,
-      plugins: [nested()]
+      plugins: [
+        nested(),
+        cssnext({
+          features: {
+            rem: {
+              html: false
+            }
+          }
+        })
+      ]
     }),
     // This is required to compile JSX
     babel({

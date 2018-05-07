@@ -7,13 +7,14 @@
   "main": "src/index.js",
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -cf iife -w",
-    "old_start": "rollup -c -w"
+    "start": "rollup -cf iife -w"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015-rollup": "^3.0.0",
+    "postcss": "^6.0.22",
+    "postcss-cssnext": "^3.1.0",
     "postcss-nested": "^2.1.2",
     "rollup": "^0.49.3",
     "rollup-plugin-babel": "^3.0.4",

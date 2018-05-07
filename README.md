@@ -76,3 +76,17 @@ $(npm bin)/rollup -cf iife -i index.js -o bundle.js
 ```bash
 $ yarn add @hyperapp/router
 ```
+
+## PostCSS Setup with autoprefixer and CSSNext
+
+> autoprefixer is included in postcss-cssnext
+
+```bash
+$ yarn add --dev postcss postcss-cssnext 
+```
+```javascript
+var processorsArray = [
+  // snipped for brevity
+  require('cssnext')()
+];
+```
