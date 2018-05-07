@@ -7,6 +7,9 @@ import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
 import nested from 'postcss-nested'
 
+// Added to compile JSX
+import babel from 'rollup-plugin-babel'
+
 const prod = !process.env.ROLLUP_WATCH
 const dev = !!process.env.ROLLUP_WATCH
 
@@ -25,8 +28,20 @@ export default {
     `,
   },
   plugins: [
-    postcss({ plugins: [nested()] }),
-    resolve({ jsnext: true }),
+    postcss({ 
+      plugins: [nested()] 
+    }),
+    // This is required to compile JSX
+    babel({
+      babelrc: false,
+      presets: ["es2015-rollup"],
+      plugins: [
+        ["transform-react-jsx", { pragma: "h" }]
+      ]
+    }),
+    resolve({ 
+      jsnext: true 
+    }),
     commonjs(),
     buble({ jsx: 'h' }),
     prod && uglify(),
@@ -36,6 +51,6 @@ export default {
         contentBase: ['static'],
         historyApiFallback: true,
         port: 8080,
-      }),
-  ],
+      })
+  ]
 }

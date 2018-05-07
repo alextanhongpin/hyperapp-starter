@@ -23,3 +23,56 @@ This will build the application and serve it on http://localhost:8080
 - Frontend application state management and routing using [hyperapp](https://www.npmjs.com/package/hyperapp)
 - PWA compliant resources; service worker, manifest and icons passing [lighthouse](https://github.com/GoogleChrome/lighthouse)
 - Static deploys to `gh-pages` when merged to master using [TravisCI](https://travis-ci.org/)
+
+
+## Installing JSX
+
+
+Install development dependencies:
+
+```bash
+$ npm i -D \
+  rollup \
+  rollup-plugin-babel \
+  rollup-plugin-node-resolve \
+  rollup-plugin-uglify \
+  babel-core \
+  babel-preset-es2015-rollup \
+  babel-plugin-transform-react-jsx
+```
+
+Create a rollup.config.js file:
+
+```javascript
+import babel from "rollup-plugin-babel"
+import resolve from "rollup-plugin-node-resolve"
+import uglify from "rollup-plugin-uglify"
+
+export default {
+  plugins: [
+    babel({
+      babelrc: false,
+      presets: ["es2015-rollup"],
+      plugins: [
+        ["transform-react-jsx", { pragma: "h" }]
+      ]
+    }),
+    resolve({
+      jsnext: true
+    }),
+    uglify()
+  ]
+}
+```
+
+Bundle your application:
+
+```
+$(npm bin)/rollup -cf iife -i index.js -o bundle.js
+```
+
+## Installing Hyperapp Router
+
+```bash
+$ yarn add @hyperapp/router
+```
