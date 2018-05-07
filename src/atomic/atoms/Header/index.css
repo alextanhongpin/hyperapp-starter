@@ -1,0 +1,24 @@
+@import '../../../styles/theme.css';
+
+:root {
+	--header-height: 60px;
+	--brand-height: 35px;
+}
+
+header {
+	height: var(--header-height);
+	line-height: var(--header-height);
+	padding: 0 16px;
+	/* box-shadow: inset 0 -5px 10px rgba(0, 0, 0, .05); */
+}
+
+.header-brand {
+	text-decoration: none;
+	color: var(--coral-red);
+	display: inline-block;
+	height: var(--brand-height);
+	line-height: var(--brand-height);
+	padding: 0 16px;
+	font-weight: bold;
+	border-radius: 3px;
+}

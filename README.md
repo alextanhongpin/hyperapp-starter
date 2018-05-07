@@ -82,7 +82,7 @@ $ yarn add @hyperapp/router
 > autoprefixer is included in postcss-cssnext
 
 ```bash
-$ yarn add --dev postcss postcss-cssnext 
+$ yarn add --dev postcss postcss-import postcss-url postcss-cssnext postcss-browser-reporter postcss-reporter cssnano
 ```
 ```javascript
 var processorsArray = [

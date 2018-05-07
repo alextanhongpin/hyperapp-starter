@@ -6,7 +6,11 @@ import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
 import nested from 'postcss-nested'
-import cssnext from 'postcss-cssnext'
+import postcssnext from 'postcss-cssnext'
+import postcssImport from 'postcss-import'
+import postcssUrl from 'postcss-url'
+import postcssReporter from 'postcss-browser-reporter'
+import cssnano from 'cssnano'
 
 // Added to compile JSX
 import babel from 'rollup-plugin-babel'
@@ -34,14 +38,21 @@ export default {
       modules: true,
       minimize: true,
       plugins: [
+        postcssImport({
+          path: ['./src/styles']
+        }),
         nested(),
-        cssnext({
+        postcssnext({
           features: {
             rem: {
               html: false
             }
           }
-        })
+        }),
+        postcssUrl(),
+        postcssReporter(),
+        // Disable autoprefixer, because it is already included in cssnext
+        cssnano({ autoprefixer: false })
       ]
     }),
     // This is required to compile JSX
